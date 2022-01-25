@@ -43,7 +43,7 @@ public:
 
 	List(const List<T>& obj) : head(NULL), tail(NULL)
 	{
-		Node* currnode = head;
+		Node* currnode = obj.head;
 		while (currnode)
 		{
 			this->Insert(currnode->data);
@@ -54,7 +54,7 @@ public:
 	List& operator=(const List<T>& obj)
 	{
 		this->clear();
-		Node* currnode = head;
+		Node* currnode = obj.head;
 		while (currnode)
 		{
 			this->Insert(currnode->data);
