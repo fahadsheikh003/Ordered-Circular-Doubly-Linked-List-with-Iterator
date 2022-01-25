@@ -43,22 +43,28 @@ public:
 
 	List(const List<T>& obj) : head(NULL), tail(NULL)
 	{
-		Node* currnode = obj.head;
-		while (currnode)
+		if (!obj.isEmpty())
 		{
-			this->Insert(currnode->data);
-			currnode = currnode->next;
+			Node* currnode = obj.head;
+			do
+			{
+				this->Insert(currnode->data);
+				currnode = currnode->next;
+			} while (currnode != obj.head);
 		}
 	}
 
 	List& operator=(const List<T>& obj)
 	{
 		this->clear();
-		Node* currnode = obj.head;
-		while (currnode)
+		if (!obj.isEmpty())
 		{
-			this->Insert(currnode->data);
-			currnode = currnode->next;
+			Node* currnode = obj.head;
+			do
+			{
+				this->Insert(currnode->data);
+				currnode = currnode->next;
+			} while (currnode != obj.head);
 		}
 		return *this;
 	}
