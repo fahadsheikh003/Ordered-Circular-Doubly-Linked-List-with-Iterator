@@ -43,7 +43,7 @@ public:
 
 	List(const List<T>& obj) : head(NULL), tail(NULL)
 	{
-		if (!obj.isEmpty())
+		if (obj.head)
 		{
 			Node* currnode = obj.head;
 			do
@@ -57,7 +57,7 @@ public:
 	List& operator=(const List<T>& obj)
 	{
 		this->clear();
-		if (!obj.isEmpty())
+		if (obj.head)
 		{
 			Node* currnode = obj.head;
 			do
